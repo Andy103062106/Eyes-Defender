@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/title"
+    android:id="@+id/mainText"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
@@ -9,9 +9,9 @@
     android:visibility="visible">
 
     <CheckedTextView
-        android:id="@+id/checkedTextView2"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="About Eyes Defender"
@@ -20,13 +20,66 @@
         android:textStyle="bold|italic" />
 
     <CheckedTextView
-        android:id="@+id/checkedTextView3"
-        android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:layout_below="@+id/checkedTextView2"
+        android:id="@+id/Explanation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Title"
         android:layout_centerHorizontal="true"
         android:fontFamily="serif"
         android:text="This product is used to inform you of the distance between your children and computer screens when they are using computers. And it also provides the history data for you to look up."
         android:textColor="@android:color/holo_green_dark"
         android:textSize="23sp" />
+
+    <CheckedTextView
+        android:id="@+id/Developers"
+        android:layout_width="155dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="149dp"
+        android:text="Developers"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        android:textStyle="bold|italic" />
+
+    <CheckedTextView
+        android:id="@+id/D1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Developers"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="NTHU CS   蘇奕安"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="24sp" />
+
+    <CheckedTextView
+        android:id="@+id/D2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/D1"
+        android:layout_centerHorizontal="true"
+        android:text="NTHU CS   許學文"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="24sp" />
+
+    <CheckedTextView
+        android:id="@+id/D3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/D2"
+        android:layout_centerHorizontal="true"
+        android:text="NTHU CS   陳其威"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="24sp" />
+
+    <CheckedTextView
+        android:id="@+id/D4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/D3"
+        android:layout_centerHorizontal="true"
+        android:text="NTHU CS   張景翔"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="24sp" />
 </RelativeLayout>
