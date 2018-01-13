@@ -26,68 +26,23 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/Title"
-        android:layout_marginTop="19dp"
         android:fontFamily="serif"
-        android:lineSpacingExtra="12sp"
+        android:lineSpacingExtra="8sp"
         android:text="This product is used to inform you of the distance between your children and computer screens when they are using computers. And it also provides the history data for you to look up."
         android:textColor="@android:color/holo_green_dark"
         android:textSize="23sp" />
 
     <CheckedTextView
         android:id="@+id/Developers"
-        android:layout_width="155dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkedTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="132dp"
+        android:layout_marginBottom="14dp"
         android:text="Developers"
         android:textColor="@color/colorAccent"
         android:textSize="30sp"
         android:textStyle="bold|italic" />
-
-    <CheckedTextView
-        android:id="@+id/D1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/Developers"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="49dp"
-        android:text="NTHU CS   蘇奕安"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="24sp" />
-
-    <CheckedTextView
-        android:id="@+id/D2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/D1"
-        android:layout_alignStart="@+id/D1"
-        android:layout_below="@+id/D1"
-        android:text="NTHU CS   許學文"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="24sp" />
-
-    <CheckedTextView
-        android:id="@+id/D3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/D2"
-        android:layout_alignStart="@+id/D2"
-        android:layout_below="@+id/D2"
-        android:text="NTHU CS   陳其威"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="24sp" />
-
-    <CheckedTextView
-        android:id="@+id/D4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/D3"
-        android:layout_alignStart="@+id/D3"
-        android:layout_below="@+id/D3"
-        android:text="NTHU CS   張景翔"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="24sp" />
 
     <CheckedTextView
         android:id="@+id/HowToUse"
@@ -95,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/Explanation"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="13dp"
         android:text="How To Use This Product"
         android:textColor="@color/colorAccent"
         android:textSize="30sp"
@@ -105,9 +60,10 @@
         android:id="@+id/Today"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/HowToUse"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="14dp"
         android:text="Press &quot;Today&quot;   to get today's data"
         android:textColor="?attr/actionModeSplitBackground"
         android:textSize="24sp" />
@@ -116,11 +72,22 @@
         android:id="@+id/checkedTextView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/Today"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
         android:text="Press &quot;History&quot; to get history's data"
         android:textColor="?attr/actionModeSplitBackground"
         android:textSize="23.5sp" />
+
+    <CheckedTextView
+        android:id="@+id/checkedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:text="蘇奕安 許學文 陳其威 張景翔"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="24sp" />
 
 </RelativeLayout>
