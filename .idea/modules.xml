@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Eyes-Defender.iml" filepath="$PROJECT_DIR$/Eyes-Defender.iml" />
+      <module fileurl="file://C:\Users\Andy\Eyes-Defender\Eyes-Defender.iml" filepath="C:\Users\Andy\Eyes-Defender\Eyes-Defender.iml" />
       <module fileurl="file://C:\Users\user\StudioProjects\Eyes-Defender\EyesDefender.iml" filepath="C:\Users\user\StudioProjects\Eyes-Defender\EyesDefender.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Andy\Eyes-Defender\app\app.iml" filepath="C:\Users\Andy\Eyes-Defender\app\app.iml" />
     </modules>
   </component>
 </project>
