@@ -25,6 +25,8 @@ import com.github.mikephil.charting.formatter.PercentFormatter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
 import android.widget.Button;
 
 public class History extends AppCompatActivity {
@@ -50,7 +52,7 @@ public class History extends AppCompatActivity {
     private Button btnday5;
     private Button btnday6;
     private Button btnday7;
-
+    int[] distance = new int[60];
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -200,7 +202,26 @@ public class History extends AppCompatActivity {
 
         ActionBar actionBar = super.getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+        Random rand = new Random();
         for (int i=1;i<=7;i++) {
+            for(int l=0;l<60;l++) {
+                int b;
+                if(l < 10){
+                    b = 33;
+                }else if(l < 20){
+                    b = 37;
+                }else if(l < 30){
+                    b = 43;
+                }else if(l < 40){
+                    b = 40;
+                }else if(l < 50){
+                    b = 38;
+                }else{
+                    b = 45;
+                }
+                int n = rand.nextInt(5) + b;
+                distance[l] = n;
+            }
             addLineChart(i);
             addPieChart(i);
         }
@@ -217,12 +238,7 @@ public class History extends AppCompatActivity {
         else return;
         // chart_line.setData(getLineData());
         List<Entry> entries = new ArrayList<>();
-        entries.add(new Entry(28, 0));
-        entries.add(new Entry(25, 1));
-        entries.add(new Entry(31, 2));
-        entries.add(new Entry(32, 3));
-        entries.add(new Entry(30, 4));
-        entries.add(new Entry(29, 5));
+        for(int i=0;i<60;i++) entries.add(new Entry(distance[i], i));
 
         LineDataSet dataSetA = new LineDataSet(entries, "Distance");
         dataSetA.setFillAlpha(255);
@@ -231,11 +247,11 @@ public class History extends AppCompatActivity {
         dataSetA.setLineWidth(5f);
         dataSetA.setCircleRadius(3f);
         dataSetA.setDrawCircleHole(false);
-        dataSetA.setValueTextSize(9f);
+        dataSetA.setValueTextSize(3f);
         dataSetA.setDrawFilled(true);
-        dataSetA.setCircleRadius(5);
+        dataSetA.setCircleRadius(3);
 
-        LimitLine yLimitLine = new LimitLine(30f,"yLimit 测试");
+        LimitLine yLimitLine = new LimitLine(40f,"yLimit 测试");
         yLimitLine.setLineColor(Color.RED);
         yLimitLine.setTextColor(Color.RED);
         YAxis leftAxis;
@@ -252,12 +268,7 @@ public class History extends AppCompatActivity {
         yLimitLine.setLineWidth(10);
 
         ArrayList<String> labels = new ArrayList<>();
-        labels.add("1/13 12:00");
-        labels.add("13:00");
-        labels.add("14:00");
-        labels.add("15:00");
-        labels.add("16:00");
-        labels.add("17:00");
+        for(int i=0; i<60; i++) labels.add("X"+i);
 
         LineData data = new LineData(labels, dataSetA);
         XAxis xAxis;
@@ -325,8 +336,10 @@ public class History extends AppCompatActivity {
 
 
         ArrayList<Entry> yValues = new ArrayList<Entry>();
-        yValues.add(new Entry(5*type, 0));
-        yValues.add(new Entry(5*type-1, 1));
+        int close=0;
+        for(int i=0; i<60; i++) if(distance[i] < 40) close++;
+        yValues.add(new Entry(close, 0));
+        yValues.add(new Entry(60-close, 1));
 
         PieDataSet dataSet = new PieDataSet(yValues, "");
         dataSet.setColors(colors);

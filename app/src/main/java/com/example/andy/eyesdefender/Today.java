@@ -20,16 +20,37 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Today extends AppCompatActivity {
     /** Called when the activity is first created. */
     PieChart pieChart;
+    int[] distance = new int[60];
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_today);
         ActionBar actionBar = super.getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+        Random rand = new Random();
+        for(int l=0;l<60;l++) {
+            int b;
+            if(l < 10){
+                b = 33;
+            }else if(l < 20){
+                b = 37;
+            }else if(l < 30){
+                b = 43;
+            }else if(l < 40){
+                b = 40;
+            }else if(l < 50){
+                b = 38;
+            }else{
+                b = 45;
+            }
+            int n = rand.nextInt(5) + b;
+            distance[l] = n;
+        }
         addLineChart();
         addPieChart();
     }
@@ -38,12 +59,7 @@ public class Today extends AppCompatActivity {
         LineChart chart_line = findViewById(R.id.chart_line);
         // chart_line.setData(getLineData());
         List<Entry> entries = new ArrayList<>();
-        entries.add(new Entry(28, 0));
-        entries.add(new Entry(25, 1));
-        entries.add(new Entry(31, 2));
-        entries.add(new Entry(32, 3));
-        entries.add(new Entry(30, 4));
-        entries.add(new Entry(29, 5));
+        for(int i=0;i<60;i++) entries.add(new Entry(distance[i], i));
 
         LineDataSet dataSetA = new LineDataSet(entries, "Distance");
         dataSetA.setFillAlpha(255);
@@ -52,11 +68,11 @@ public class Today extends AppCompatActivity {
         dataSetA.setLineWidth(5f);
         dataSetA.setCircleRadius(3f);
         dataSetA.setDrawCircleHole(false);
-        dataSetA.setValueTextSize(9f);
+        dataSetA.setValueTextSize(3f);
         dataSetA.setDrawFilled(true);
-        dataSetA.setCircleRadius(5);
+        dataSetA.setCircleRadius(3);
 
-        LimitLine yLimitLine = new LimitLine(30f,"yLimit 测试");
+        LimitLine yLimitLine = new LimitLine(40f,"");
         yLimitLine.setLineColor(Color.RED);
         yLimitLine.setTextColor(Color.RED);
         YAxis leftAxis = chart_line.getAxisLeft();
@@ -64,12 +80,7 @@ public class Today extends AppCompatActivity {
         yLimitLine.setLineWidth(10);
 
         ArrayList<String> labels = new ArrayList<>();
-        labels.add("1/13 12:00");
-        labels.add("13:00");
-        labels.add("14:00");
-        labels.add("15:00");
-        labels.add("16:00");
-        labels.add("17:00");
+        for(int i=0; i<60; i++) labels.add("X"+i);
 
         LineData data = new LineData(labels, dataSetA);
         chart_line.setData(data);
@@ -88,8 +99,10 @@ public class Today extends AppCompatActivity {
         pieChart.setDrawHoleEnabled(false);
 
         ArrayList<Entry> yValues = new ArrayList<Entry>();
-        yValues.add(new Entry(8f, 0));
-        yValues.add(new Entry(15f, 1));
+        int close=0;
+        for(int i=0; i<60; i++) if(distance[i] < 40) close++;
+        yValues.add(new Entry(close, 0));
+        yValues.add(new Entry(60-close, 1));
 
         PieDataSet dataSet = new PieDataSet(yValues, "");
         dataSet.setColors(colors);
