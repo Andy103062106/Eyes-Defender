@@ -9,26 +9,216 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="19dp"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="21dp"
-        android:text="History test"
-        android:textSize = "44sp"
-        />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="History Data"
+        android:textSize="44sp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Day_7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/textView"
-        android:layout_marginLeft="42dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="83dp"
-        android:text="Button" />
+        android:text="7 days ago"
+        android:textSize="16sp"
+        android:onClick="day7" />
+
+    <Button
+        android:id="@+id/Day_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Day_7"
+        android:text="6 days ago"
+        android:textSize="16sp"
+        android:onClick="day6"/>
+
+    <Button
+        android:id="@+id/Day_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Day_6"
+        android:text="5 days ago"
+        android:textSize="16sp"
+        android:onClick="day5"/>
+
+    <Button
+        android:id="@+id/Day_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Day_5"
+        android:text="4 days ago"
+        android:textSize="16sp"
+        android:onClick="day4"/>
+
+    <Button
+        android:id="@+id/Day_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Day_4"
+        android:text="3 days ago"
+        android:textSize="16sp"
+        android:onClick="day3"/>
+
+    <Button
+        android:id="@+id/Day_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Day_3"
+        android:text="2 days ago"
+        android:textSize="16sp"
+        android:onClick="day2"/>
+
+    <Button
+        android:id="@+id/Day_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Day_2"
+        android:text="1 days ago"
+        android:textSize="16sp"
+        android:onClick="day1"/>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/line1"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_below="@+id/Day_4"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/Day_3"
+        android:layout_toRightOf="@+id/Day_3" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pie1"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignEnd="@+id/line1"
+        android:layout_alignRight="@+id/line1"
+        android:layout_below="@+id/textView" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/line2"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_below="@+id/Day_4"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/Day_3"
+        android:layout_toRightOf="@+id/Day_3" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pie2"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignEnd="@+id/line1"
+        android:layout_alignRight="@+id/line1"
+        android:layout_below="@+id/textView" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/line3"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_below="@+id/Day_4"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/Day_3"
+        android:layout_toRightOf="@+id/Day_3" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pie3"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignEnd="@+id/line1"
+        android:layout_alignRight="@+id/line1"
+        android:layout_below="@+id/textView" />
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/line4"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_below="@+id/Day_4"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/Day_3"
+        android:layout_toRightOf="@+id/Day_3" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pie4"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignEnd="@+id/line1"
+        android:layout_alignRight="@+id/line1"
+        android:layout_below="@+id/textView" />
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/line5"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_below="@+id/Day_4"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/Day_3"
+        android:layout_toRightOf="@+id/Day_3" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pie5"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignEnd="@+id/line1"
+        android:layout_alignRight="@+id/line1"
+        android:layout_below="@+id/textView" />
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/line6"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_below="@+id/Day_4"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/Day_3"
+        android:layout_toRightOf="@+id/Day_3" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pie6"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignEnd="@+id/line1"
+        android:layout_alignRight="@+id/line1"
+        android:layout_below="@+id/textView" />
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/line7"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_below="@+id/Day_4"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/Day_3"
+        android:layout_toRightOf="@+id/Day_3" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pie7"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignEnd="@+id/line1"
+        android:layout_alignRight="@+id/line1"
+        android:layout_below="@+id/textView" />
 
 </RelativeLayout>
