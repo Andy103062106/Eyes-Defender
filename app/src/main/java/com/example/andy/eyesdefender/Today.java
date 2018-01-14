@@ -30,6 +30,11 @@ public class Today extends AppCompatActivity {
         setContentView(R.layout.activity_today);
         ActionBar actionBar = super.getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+        addLineChart();
+        addPieChart();
+    }
+
+    public void addLineChart() {
         LineChart chart_line = findViewById(R.id.chart_line);
         // chart_line.setData(getLineData());
         List<Entry> entries = new ArrayList<>();
@@ -71,7 +76,9 @@ public class Today extends AppCompatActivity {
 
         XAxis xAxis = chart_line.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM); // 设置X轴的位置
+    }
 
+    public void addPieChart() {
         ArrayList<Integer> colors = new ArrayList<>();
         colors.add(Color.rgb(255,81,81));
         colors.add(Color.rgb(121,255,121));
@@ -97,8 +104,6 @@ public class Today extends AppCompatActivity {
         pData.setValueFormatter(new PercentFormatter());
 
         pieChart.setData(pData);
-
-
     }
 
 }
